@@ -287,3 +287,23 @@ Image = elt('Image', 3)
 Note = elt('Note', 1)
 SoftBreak = elt('SoftBreak', 0)
 Span = elt('Span', 2)
+
+# Tables
+AlignLeft = elt('AlignLeft', 0)
+AlignRight = elt('AlignLeft', 0)
+AlignDefault = elt('AlignLeft', 0)
+
+
+def split_string(s):
+    """Takes a string and makes it into a series of Strs and Spaces
+    """
+
+    out = []
+    list = s.split(" ");
+    for x in list[:-1]:
+        #print Str(x)
+        out.append(Str(x))
+        out.append(Space())
+    out.append(Str(list[-1]))
+    return out
+
