@@ -237,11 +237,12 @@ def attributes(attrs):
 def elt(eltType, numargs):
     def fun(*args):
         lenargs = len(args)
+
         if lenargs != numargs:
             raise ValueError(eltType + ' expects ' + str(numargs) +
                              ' arguments, but given ' + str(lenargs))
         if numargs == 0:
-            xs = []
+            return {'t': eltType }
         elif len(args) == 1:
             xs = args[0]
         else:
